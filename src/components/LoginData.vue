@@ -52,7 +52,7 @@ const handleSubmit = async (e) => {
     return
   }
   console.log('Form is valid')
-  router.push('/UserDashboard')
+  router.push('/UsersDashboard')
 }
 
 </script>
