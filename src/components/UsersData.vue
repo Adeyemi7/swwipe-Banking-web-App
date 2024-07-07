@@ -54,7 +54,7 @@ const handleSubmit = async (e) => {
 <template>
   <div class="real-container">
     <div class="logo-container">
-      <SwwipeLogo class="s-logo" />
+      <SwwipeLogo  />
     </div>
 
     <section class="login-details">
@@ -166,7 +166,6 @@ const handleSubmit = async (e) => {
 }
 
 .s-logo {
-  border: 3px solid red;
   margin-bottom: 20px;
 }
 
@@ -266,6 +265,7 @@ button:hover {
 
 @media (max-width: 992px) {
   .real-container {
+    margin-top: 20%;
     width: 60%;
   }
 
@@ -277,6 +277,7 @@ button:hover {
 
 @media (max-width: 768px) {
   .real-container {
+    margin-top: 0;
     width: 80%;
     padding: 1em;
   }
