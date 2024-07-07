@@ -48,7 +48,6 @@ const handleSubmit = async (e) => {
   displayPasswordCreatedMessage(
     setTimeout(() => {
         console.log('Form is valid')
-        window.location.href = '/LoginPage'
         router.push('/LoginPage')
       }, 5000)
 )
