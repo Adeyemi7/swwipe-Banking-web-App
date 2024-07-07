@@ -3,6 +3,7 @@ import { reactive, computed } from 'vue'
 import { useVuelidate } from '@vuelidate/core'
 import { required, email, minLength, maxLength, helpers } from '@vuelidate/validators'
 import { sameAs } from '@vuelidate/validators'
+import SwwipeLogo from './icons/SwwipeLogo.vue'
 import { useRouter } from 'vue-router' // Import useRouter from Vue Router
 
 const state = reactive({
@@ -165,6 +166,7 @@ const handleSubmit = async (e) => {
 }
 
 .s-logo {
+  border: 3px solid red;
   margin-bottom: 20px;
 }
 
