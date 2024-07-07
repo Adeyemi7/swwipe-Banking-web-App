@@ -49,7 +49,7 @@ const handleForgotPassword = async (e) => {
   displaySuccessfulMessage(
     setTimeout(() => {
         console.log('Form is valid')
-        router.push('/CreateNewPassword')
+        router.push('/PasswordReset')
       }, 5000)
 
 )
