@@ -5,6 +5,7 @@ import { required, email, helpers } from '@vuelidate/validators'
 import CancelBar from './icons/CancelBar.vue'
 import HandMobile from './icons/HandMobile.vue'
 import SuccessfulEmailMessage from './SuccessfulEmailMessage.vue'
+import { useRouter } from 'vue-router'
 
 const state = reactive({
   email: ''
@@ -18,6 +19,8 @@ const rules = computed(() => ({
 }))
 
 const v$ = useVuelidate(rules, state)
+const router = useRouter() // Initialize useRouter to use for navigation
+
 
 const emit = defineEmits(['close'])
 
@@ -47,7 +50,7 @@ const handleForgotPassword = async (e) => {
     setTimeout(() => {
         console.log('Form is valid')
         window.location.href = '/PasswordReset'
-        this.$router.push('/PasswordReset')
+        router.push('/PasswordReset')
       }, 5000)
 
 )

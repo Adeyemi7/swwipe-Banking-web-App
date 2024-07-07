@@ -1,11 +1,9 @@
 <script setup>
-import SwwipeLogo from './icons/SwwipeLogo.vue'
 import { reactive, computed } from 'vue'
 import { useVuelidate } from '@vuelidate/core'
 import { required, email, minLength, maxLength, helpers } from '@vuelidate/validators'
 import { sameAs } from '@vuelidate/validators'
-// import { useRouter } from 'vue-router'
-
+import { useRouter } from 'vue-router' // Import useRouter from Vue Router
 
 const state = reactive({
   password: '',
@@ -25,25 +23,17 @@ const rules = computed(() => ({
     sameAs: sameAs(state.password)
   },
   email: {
-    required: helpers.withMessage('Please enter a valid email address with @ symbol', required),
+    required: helpers.withMessage('Please enter a valid email address', required),
     email
   },
   businessName: {
-    required: helpers.withMessage('Business name must be verified before submission', required),
+    required: helpers.withMessage('Business name must be provided', required),
     minLength: minLength(6)
   }
 }))
 
 const v$ = useVuelidate(rules, state)
-
-// const handleSubmit = async (e) => {
-//   e.preventDefault()
-//   const result = await v$.value.$validate()
-//   if (!result) return console.log('Form is invalid')
-//   console.log('Form is valid')
-// }
-
-// const router = useRouter()
+const router = useRouter() // Initialize useRouter to use for navigation
 
 const handleSubmit = async (e) => {
   e.preventDefault()
@@ -53,10 +43,12 @@ const handleSubmit = async (e) => {
     return
   }
   console.log('Form is valid')
-  window.location.href = '/LoginPage'
-  this.$router.push('/LoginPage')
+
+  // Redirect or navigate to another route using Vue Router
+  router.push('/LoginPage') // Example of using router.push to navigate to '/LoginPage'
 }
 </script>
+
 
 <template>
   <div class="real-container">

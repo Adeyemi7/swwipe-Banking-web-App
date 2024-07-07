@@ -3,6 +3,7 @@ import { ref, reactive, computed } from 'vue'
 import useVuelidate from '@vuelidate/core'
 import { required, minLength, helpers } from '@vuelidate/validators'
 import { sameAs } from '@vuelidate/validators'
+import { useRouter } from 'vue-router'
 import HandMobile from './icons/HandMobile.vue'
 import SwwipeLogo from './icons/SwwipeLogo.vue'
 import newPasswordCreated from './newPasswordCreated.vue'
@@ -25,6 +26,7 @@ const rules = computed(() => ({
 }))
 
 const v$ = useVuelidate(rules, state)
+const router = useRouter ()
 
 const showPasswordCreated = ref(false)
 
@@ -47,7 +49,7 @@ const handleSubmit = async (e) => {
     setTimeout(() => {
         console.log('Form is valid')
         window.location.href = '/LoginPage'
-        this.$router.push('/LoginPage')
+        router.push('/LoginPage')
       }, 5000)
 )
   console.log('Form is valid')

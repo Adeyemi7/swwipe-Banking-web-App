@@ -4,6 +4,8 @@ import useVuelidate from '@vuelidate/core'
 import { required, email, minLength, helpers } from '@vuelidate/validators'
 import SwwipeLogo from './icons/SwwipeLogo.vue'
 import ForgotPassword from './ForgotPassword.vue'
+import { useRouter } from 'vue-router' // Import useRouter from Vue Router
+
 
 // const checkBox = document.querySelector('.checkbox')
 
@@ -39,6 +41,8 @@ const rules = computed(() => ({
 }))
 
 const v$ = useVuelidate(rules, state)
+const router = useRouter() // Initialize useRouter to use for navigation
+
 
 const handleSubmit = async (e) => {
   e.preventDefault()
@@ -49,7 +53,7 @@ const handleSubmit = async (e) => {
   }
   console.log('Form is valid')
   window.location.href = '/UsersDashboard'
-  this.$router.push('/UserDsashboard')
+  router.push('/UserDsashboard')
 }
 
 </script>
