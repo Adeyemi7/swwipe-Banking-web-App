@@ -49,8 +49,7 @@ const handleForgotPassword = async (e) => {
   displaySuccessfulMessage(
     setTimeout(() => {
         console.log('Form is valid')
-        window.location.href = '/PasswordReset'
-        router.push('/PasswordReset')
+        router.push('/CreateNewPassword')
       }, 5000)
 
 )
