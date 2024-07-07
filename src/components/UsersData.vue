@@ -265,7 +265,7 @@ button:hover {
 
 @media (max-width: 992px) {
   .real-container {
-    margin-top: 20%;
+    margin-top: 50%;
     width: 60%;
   }
 
