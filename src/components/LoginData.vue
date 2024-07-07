@@ -52,8 +52,7 @@ const handleSubmit = async (e) => {
     return
   }
   console.log('Form is valid')
-  window.location.href = '/UsersDashboard'
-  router.push('/UserDsashboard')
+  router.push('/UserDashboard')
 }
 
 </script>
