@@ -18,9 +18,9 @@ const router = createRouter({
       component: () => import('@/Pages/LoginPage.vue')
     },
     {
-      path: '/PasswordReset',
-      name: 'PasswordReset',
-      component: () => import('@/Pages/PasswordReset.vue')
+      path: '/CreateNewPassword',
+      name: 'CreateNewPassword',
+      component: () => import('@/Pages/CreateNewPassword.vue')
     },
     {
       path: '/MyErrorPage',
