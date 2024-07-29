@@ -7,13 +7,9 @@ import ForgotPassword from './ForgotPassword.vue'
 import { useRouter } from 'vue-router' // Import useRouter from Vue Router
 
 
-// const checkBox = document.querySelector('.checkbox')
-
-// checkBox.addEventListener('click', function () {
-//   checkBox.style.backgroundColor = '#00b6ab'
-// })
-
 const showForgotPassword = ref(false)
+const checked = ref(false) // Add a ref for the checkbox state
+
 
 const openForgotPassword = () => {
   showForgotPassword.value = true
@@ -191,7 +187,8 @@ const handleSubmit = async (e) => {
 
         <div class="container-signin">
           <span class="checkbox-con">
-            <input type="checkbox" v-model="checked" name="checkbox" class="check-box" />
+            <input type="checkbox" :class="checked ? 'checked' : 'unchecked'"
+            v-model="checked" name="checkbox" class="check-box" />
           </span>
           <span>Stay signed into your Swwipe account</span>
         </div>
@@ -232,6 +229,11 @@ const handleSubmit = async (e) => {
   margin-left: 40%;
   margin-top: 5%;
   background-color: white;
+}
+
+.swipe-logo .s-logo {
+  /* border: 5px solid red; */
+  margin-top: 2rem;
 }
 
 .back {
@@ -290,6 +292,10 @@ button {
   text-decoration: none;
 }
 
+.footer .login-texts {
+  display: block;
+}
+
 .login-texts {
   font-size: 16px;
   color: #00b6ab;
@@ -311,6 +317,14 @@ button {
 .checkbox-con {
   display: flex;
   align-items: center;
+}
+
+.checked {
+  color: blue; /* Change this to your desired color */
+}
+
+.unchecked {
+  color: grey; /* Change this to your desired color */
 }
 .forgot-password {
   color: #00b6ab;

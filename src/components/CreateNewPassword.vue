@@ -117,7 +117,7 @@ const handleSubmit = async (e) => {
 
 <style scoped>
 .container {
-  width: 22%;
+  width: 30%;
   top: 5%;
   left: 50%;
   position: absolute;

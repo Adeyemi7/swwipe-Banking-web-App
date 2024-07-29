@@ -1,10 +1,34 @@
-<script setup></script>
+<script setup>
+import { ref, onMounted, onUnmounted } from 'vue';
+
+import smart from '@/assets/Smart-handheld-pos-system.png';
+import swwipe from '@/assets/Swwipe_pos_machine.png';
+import mobile from '@/assets/mobile.png';
+
+const images = [smart,mobile, swwipe];
+
+const currentImageIndex = ref(0);
+
+const changeImage = () => {
+  currentImageIndex.value = (currentImageIndex.value + 1) % images.length;
+};
+
+let interval;
+onMounted(() => {
+  interval = setInterval(changeImage, 1000); // Change image every 1 second
+});
+
+onUnmounted(() => {
+  clearInterval(interval);
+});
+</script>
+
 
 <template>
   <div class="overall-container">
     <div class="main-container">
       <span class="mobile">
-        <img class="phone" src="@/assets/mobile.png" alt="mobile-image" />
+        <img class="phone" :src="images[currentImageIndex]" alt="mobile-image" />
       </span>
 
       <div class="footer">
@@ -57,20 +81,26 @@
   text-align: center;
 }
 
-.mobile img {
+.mobile  {
   width: 90%;
   max-width: 400px;
-  animation: image-slide 1s linear;
+  height:350px;
 }
 
-@keyframes image-slide {
+.phone {
+  width: 100%;
+  height: 100%;
+  transition: opacity 1s ease-in-out;
+}
+
+/* @keyframes image-slide {
   0% {
     transform: translateX(100%);
   }
   100% {
     transform: translateX(0%);
   }
-}
+} */
 
 .footer {
   animation: footer-slide 1s linear;
@@ -126,6 +156,7 @@
   font-weight: 800;
   line-height: 3rem;
   color: #1f2937;
+  margin-top: 1rem;
 }
 
 .sub-texts {

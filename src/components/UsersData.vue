@@ -54,7 +54,7 @@ const handleSubmit = async (e) => {
 <template>
   <div class="real-container">
     <div class="logo-container">
-      <SwwipeLogo  />
+      <SwwipeLogo class="s-logo"/>
     </div>
 
     <section class="login-details">
@@ -157,7 +157,7 @@ const handleSubmit = async (e) => {
 
 
 .real-container {
-  width: 40%;
+  width: 42%;
   margin: 5% auto;
   background-color: white;
   display: flex;
@@ -165,8 +165,12 @@ const handleSubmit = async (e) => {
   align-items: center;
 }
 
+.logo-container {
+  width: 100%;
+}
+
 .s-logo {
-  margin-bottom: 20px;
+  padding-bottom: 1em;
 }
 
 .login-details {
@@ -231,6 +235,10 @@ button:hover {
   margin-top: 0.5rem;
 }
 
+.login-texts svg {
+    display: inline;
+  }
+
 .error-msg {
   color: red;
   display: flex;
@@ -241,10 +249,13 @@ button:hover {
 .container.signin {
   margin: 1rem 0;
   text-align: left;
+  font-size: 1.1rem;
 }
 
+
+
 .buttom {
-  font-size: 1rem;
+  font-size: 1.1rem;
   margin-top: 1rem;
   text-align: left;
 }
@@ -269,10 +280,6 @@ button:hover {
     width: 60%;
   }
 
-  .login-texts svg {
-    display: flex;
-    align-self: center;
-  }
 }
 
 @media (max-width: 768px) {
@@ -280,6 +287,10 @@ button:hover {
     margin-top: 0;
     width: 80%;
     padding: 1em;
+  }
+
+  span .login-texts {
+    display: block;
   }
 }
 
@@ -302,7 +313,6 @@ button:hover {
   }
 
   .login-texts {
-    font-size: 0.9rem;
     display: flex;
   }
   
@@ -313,17 +323,5 @@ button:hover {
   }
 }
 
-@media (max-width: 375px) {
-  .Create-texts {
-    font-size: 1rem;
-  }
 
-  .header-texts {
-    font-size: 0.8rem;
-  }
-
-  .login-texts {
-    font-size: 0.8rem;
-  }
-}
 </style>
